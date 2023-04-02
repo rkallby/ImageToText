@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ImageToText</title>
+        
+        <link  href= "{{ url_for('static',filename='styles/CustomFormat.css') }}"   type="text/css" rel="stylesheet"/>
+        <link  href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}"  type="text/css" rel="stylesheet"/>
+        <script src="{{url_for('static',filename='JavaScript/bootstrap.bundle.js')}}">       </script>
+        <script src="{{url_for('static',filename='JavaScript/customscripts.js')}}">          </script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+
+
+    <body>
+        <header>
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">
+                  <img src="{{pageIcon}}" width="50" height="50" class="d-inline-block align-self-center" hspace="20">
+                  ImageToText
+                </a>
+                <div class="navbar justify-content-end ms-xxl-auto">
+                  <a class="nav-item nav-link bg-dark" href="https://ImageToText.Cloud">Home</a>
+                  <a class="nav-item nav-link bg-dark" href="https://jpg2png.com">JPG to PNG</a>
+                  <a class="nav-item nav-link bg-dark" href="https://cloudconvert.com/raw-to-jpg">RAW to JPG</a>
+                  <div style="padding-right:20px">
+                    <a href="https://Buymeacoffee.com/rkallbyf" 
+                      role="button"
+                      button type="button" 
+                      class="btn btn-warning" 
+                      style="align-items: center;">Donations
+                    </a>
+                  </div>
+                </div>
+            </nav>
+        </header>
+
+
+
+    <div class="container">
+      <h1 class="h1 text-center text-white">Image To Text Converter</h1>
+      <p class="text text-center text-white textCustom">
+        Using the power of AzureAI OCR, we can extract the text from a given image (PNG and JPG). Upload a photo to our image to text converter and click submit to get your text file instantly.
+      </p>
+      <div class="tool tool-grid">
+        <div>
+          <div class="inputBox">
+            <div class="container">
+              <form action="/" method="POST" enctype="multipart/form-data">
+                <div class="input-group mb-3 moddedInput" style="padding-top:20px;">
+                  <div class="input-group">
+                    <input type="file" name="image" class="form-control" accept="image/jpeg, image/png, image/jpg" required>
+                    {{recaptcha}}
+                    <!--div class="g-recaptcha" data-sitekey="6Le9QiklAAAAAPOTW30MyL2u1IsNne2qSsg52yoP"></div -->
+                    <button class="btn btn-secondary"  value="Upload" id="submitButton" >Convert </button>
+                  </div>
+                </div>
+              </form>
+              <p> {{message}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+
+
+    </body>
+    <footer class="footer">
+
+      <!-- Copyright -->
+    
+      <div class="text-center p-2 text-white-50" style="background-color: rgba(34,37,40);">
+      Check out our data usage and privacy policy:
+      <a class="text-white-50" href="https://mdbootstrap.com/">HERE</a>
+      </div>
+    <!-- Copyright -->
+    </footer>
+
+
+    </html>
+
