@@ -6,12 +6,12 @@ import json
 
 app = Flask(__name__)
 
-app.config['RECAPTCHA_PUBLIC_KEY'] = '6Le9QiklAAAAAPOTW30MyL2u1IsNne2qSsg52yoP'
-app.config['RECAPTCHA_PRIVATE_KEY'] = '6Le9QiklAAAAAGxJaKFkNIBlR9ArEJJ5jxET6lhR'
+app.config['RECAPTCHA_PUBLIC_KEY'] = 'Hidden'
+app.config['RECAPTCHA_PRIVATE_KEY'] = 'Hidden'
 recaptcha = ReCaptcha(app)
 
-API_KEY = "b02f653768e3426e80977533f2c8d229"
-ENDPOINT = "https://imageprocessor1761.cognitiveservices.azure.com/"
+API_KEY = "Hidden"
+ENDPOINT = "Hidden"
 
 OCR_URL = f"{ENDPOINT}vision/v3.2/ocr"
 
